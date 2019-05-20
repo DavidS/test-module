@@ -2,15 +2,19 @@ require 'puppet/resource_api/simple_provider'
 
 # Implementation for the gpgkey type using the Resource API.
 class Puppet::Provider::Gpgkey::Gpgkey < Puppet::ResourceApi::SimpleProvider
-  def get(context)
-    context.debug('Returning pre-canned example data')
+  def get(context, name = [])
+    context.debug('Returning pre-canned example data for: %s' % name.inspect)
     [
       {
+        title: '/root/foo',
         name: 'foo',
+        gpgdir: '/root',
         ensure: 'present',
       },
       {
+        title: '/root/bar',
         name: 'bar',
+        gpgdir: '/root',
         ensure: 'present',
       },
     ]

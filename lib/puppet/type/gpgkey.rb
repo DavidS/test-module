@@ -15,7 +15,7 @@ Puppet::ResourceApi.register_type(
       desc: 'Where only the key_name is provided, if using the default folder',
     },
   ],
-  features: [],
+  features: ['simple_get_filter'],
   attributes: {
     ensure: {
       type:    'Enum[present, absent]',
